@@ -1,0 +1,19 @@
+#!/bin/sh
+
+case $1 in
+  hibernate|suspend)
+  ;;
+  resume|thaw)
+    # Fan control
+    # Choose one of the following values:
+    # 0 (fan off)
+    # 2 (low speed)
+    # 4 (medium speed)
+    # 7 (maximum speed)
+    # auto (automatic - default)
+    # disengaged (disengaged)
+    echo level 1 > /proc/acpi/ibm/fan
+  ;;
+  *)
+  ;;
+esac
