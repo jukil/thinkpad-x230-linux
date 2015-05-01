@@ -1,0 +1,3 @@
+# Disable touchpad when using an external USB mouse
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="add", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/orschiro/.Xauthority", RUN+="/usr/bin/synclient TouchpadOff=1"
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="remove", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/orschiro/.Xauthority", RUN+="/usr/bin/synclient TouchpadOff=0"
