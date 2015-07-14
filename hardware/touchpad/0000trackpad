@@ -1,5 +1,6 @@
 #!/bin/sh
 case "$1" in
     resume)
+        echo 10
         DISPLAY=:0.0 su USER -c '/usr/bin/synclient TouchpadOff=0' ;;
 esac
